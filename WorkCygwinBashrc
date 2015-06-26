@@ -1,0 +1,46 @@
+
+
+#PROMPT
+#-----------------------------------------------------------------------------
+# Colors (wrap around command (char))
+#\[\e[1;30m\]\char\[\e[0;39m\] -- Grey text
+#\[\e[1;31m\]\char\[\e[0;39m\] -- Red Text
+#\[\e[1;32m\]\char[\e[0;39m\] -- Green
+#\[\e[1;33m\]\char\[\e[0;39m\] -- Yellow 
+#\[\e[1;34m\]\char\[\e[0;39m\] -- Dark Blue
+#\[\e[1;35m\]\char\[\e[0;39m\] -- Magenta
+#\[\e[1;36m\]\char\[\e[0;39m\] -- Bright Blue
+#\[\e[1;37m\]\char\[\e[0;39m\] -- White
+# Backround colors are the same but are in the 40's ie "\e[32;40m\]" is Green
+# text with a Black background
+
+# Data for prompt (choose)
+# \h -- (short) Hostname (H for long)
+# \u -- Username
+# \w -- Path (to current working dir from home (~))
+#\d -- Date in "Wed Jun 10" format
+# \j -- The number of processes you've suspended in this shell by hitting ^Z
+# \l -- Name of the shell's terminal device (note if using cygwin probably
+    # pty because it is a "psuedo Terminal" for text terminal (tty
+    # "TeleTYpe terminal"))
+# \s -- Name of the shell executable
+# \@ -- Date in 12 hr format with am/pm
+# \! -- Current command's position in the history buffer
+# \# -- Command number (this will count up at each prompt, as long as you
+    # type something
+# \$ If wou are not root, inserts a "$"; if you are at roor, you get a  "#"
+
+export PS1="\n\[\e[33;1m\]\u@\H\[\e[35;1m\] Shell: \s \l \[\e[31;1m\]\d \@\[\e[37;1m\] This is command \#\n\[\e[32;1m\]\w\[\e[36;1m\] => \[\e[0m\]"
+export PS2="| => "
+
+alias vim='C:/Program\ Files\ \(x86\)/Vim/vim72/gvim.exe'
+alias open='cygstart'
+alias clear='printf "\033c"'
+
+alias ls='ls --color=auto' 
+alias ll='ls -l'
+alias la='ls -a'
+alias lt='ls -lt'
+alias lla='ls -la'
+alias lat='ls -lat'
+

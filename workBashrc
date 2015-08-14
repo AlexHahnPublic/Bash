@@ -1,3 +1,52 @@
-if [ -f ~/.bashrc ]; then
-	source ~/.bashrc
-fi
+********************************************************
+******************ALEX HAHN'S .BASHRC*******************
+********************************************************
+
+# Table of contents
+#-------------------------------------------------------
+#	1) Prompt
+#	2) Aliases
+#	3)
+#-------------------------------------------------------
+
+
+
+#   ------------------------------
+#   1. PROMPT
+#   ------------------------------
+# ______________________________________________________
+#Prompt: User@Computername (yellow), Shell and type (psuedo shell, tty, etc., pink), Date (Red), Command Number (white)
+export PS1="\n\[\e[33;1m\]\u@\H\[\e[35;1m\] Shell:\s\l \[\e[31;1m\]\d \@\[\e[37;1m\] This is command \#\n\[\e[32;1m\]\w\[\e[36;1m\] => \[\e[0m\]"
+export PS2="| => "
+
+#   ------------------------------
+#   2. Aliases
+#   ------------------------------
+# ______________________________________________________
+
+# Put all non filesystem specific (ie a path/location pointer or anything) here
+
+# ls aliases
+alias ls='ls --color=auto'	#ls has colors (google if interested on how to designate what by what color)
+alias ll='ls -l'		#ll is list long format
+alias la='ls -a'		#la is list everything (hidden too)
+alias lt='ls -lt'		#lt is list long format in time order
+alias lla='ls -la'		#lla is list everything (hidden too) in long format
+aliat lat='ls -lat'		#lat is list everything in long format in order
+
+# wc aliases (word count utility) wc normally displays <line> <words> <character> <filename>
+alias wcl='wc -l'		#wcl is line count
+alias wcw='wc -w'		#wcw is word count
+alias wcc='wc -m'		#wcc is character count
+alias wcb='ec -b'		#wcb is byte count
+
+#find aliases
+alias findfile='find . -name' 	#recursive search by name, use * wildcards if you don't know entire filename!
+
+#grep aliases
+export GREP_COLOR='1;33'
+alias grep='grep --color=auto'	#really nice feature for grep to colorize the hits of the search term!
+alias grepn='grep -n'		#grepn displays the line number
+alias grepc='grep -c' 
+
+
